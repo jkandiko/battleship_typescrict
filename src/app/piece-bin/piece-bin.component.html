@@ -1,0 +1,15 @@
+<div
+     style="border:1px solid black"
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)"
+     (dragleave)="onDragLeave($event)">
+  <h2 [hidden]="gamePieces.length == 0">Game Pieces for player {{hudId}}</h2>
+  <div [hidden]="gamePieces.length == 0">{{gameBinMessage}}</div>
+  <select [(ngModel)]="selectedOrientation" [hidden]="gamePieces.length == 0">
+    <option *ngFor="let orientation of orientations" [value]="orientation">{{orientation}}</option>
+  </select>
+  <ul>
+    <li *ngFor="let piece of gamePieces" (dragstart)="drag($event,piece)" draggable="true">{{piece.name}}</li>
+  </ul>
+  <button [hidden]="gamePieces.length > 0" (click)="playerReady()">Ready</button>
+</div>

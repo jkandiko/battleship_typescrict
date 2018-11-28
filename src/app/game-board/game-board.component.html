@@ -1,0 +1,19 @@
+<div style="width:100%;display:table;">
+  <div style="display:table-row">
+    <button (click)="randomGame()">Random Game</button>
+    <div style="display:table-cell;">
+      <app-hud [hudId]="'Player1'" #hud1></app-hud>
+    </div>
+    <div style="display:table-cell;">
+      <app-hud [hudId]="'Player2'" #hud2></app-hud>
+      </div>
+  </div>
+</div>
+<div id="overlay" [hidden]="hideGameMessage">
+  <div id="text">
+    <p [hidden]='gameWinner == ""'>{{gameWinner}} won the game.</p>
+    <br/>
+    <br/>
+    <button (click)="startNewGame()">Start Another Game</button>
+  </div>
+</div>

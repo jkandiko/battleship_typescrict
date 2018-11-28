@@ -1,0 +1,8 @@
+<div [class.currentTurn]="inProcess && currentTurn" [class.notCurrentTurn]="inProcess && !currentTurn">
+  Hub player Id : {{ hudId}}
+  <h2 style="color:red" [hidden]="gameMessage == ''">{{gameMessage}}</h2>
+  <app-attack-grid #attackGrid [ngClass]="{'notCurrentTurn': !inProcess && !currentTurn}"></app-attack-grid>
+  <app-piece-bin [hidden]="pieceBinHidden" [hudId]="hudId" #pieceBin></app-piece-bin>
+  <button (click)="placeAll()" value="Place All" [hidden]="!placeAllVisible">Place All</button>
+  <app-ship-grid #shipGrid [hudId]="hudId"></app-ship-grid>
+</div>

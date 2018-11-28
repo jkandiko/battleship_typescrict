@@ -1,0 +1,25 @@
+<h2>
+  Attack Grid
+</h2>
+
+<table class="hud no-spacing" style="display:table-cell">
+  <tr *ngFor="let row of rows;index as i">
+    <td *ngFor="let cell of row.cells;index as j"
+        class="{{cell.cssClass}}"
+        (click)="onFire($event, cell)"
+        [ngClass]="{
+      'is-open': cell.hitStatus == hitStatuses.Open,
+      'is-hit': cell.hitStatus == hitStatuses.Hit,
+      'is-miss':cell.hitStatus == hitStatuses.Miss,
+      'hoverable':cell.hitStatus == 0
+    }">
+      {{cell.text}}
+    </td>
+  </tr>
+</table>
+<div [hidden]="sunkenShips.length == 0">
+  You sunk the following:
+  <ul>
+    <li *ngFor="let ship of sunkenShips">{{ship.name}}</li>
+  </ul>
+</div>

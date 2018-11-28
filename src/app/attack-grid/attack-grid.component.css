@@ -1,0 +1,23 @@
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.hoverable:hover {
+  background-color: gray;
+}
+.is-open {
+  background-color:aliceblue;
+}
+.is-hit{
+  background-color:orangered;
+}
+.is-miss{
+  background-color:darkgray;
+}

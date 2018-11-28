@@ -1,0 +1,29 @@
+<h2>
+  Ships
+</h2>
+<table class="hud no-spacing">
+  <tr *ngFor="let row of rows;index as i">
+    <td *ngFor="let cell of row.cells;index as j"
+        class="{{cell.cssClass}}"
+        [class.occupiedSpace]="cell.occupied"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+        (drop)="onDrop($event, cell)"
+        [draggable]="boardDraggable && i > 0 && j > 0"
+        (dragstart)="onDrag($event,cell)"
+        [ngClass]="{
+          'is-hit': cell.hitStatus == 1,
+          'is-miss':cell.hitStatus == 2
+        }">{{cell.text}}
+    </td>
+  </tr>
+</table>
+
+<div [hidden]="sunkShips.length == 0">
+  Sunken Ships
+  <ul>
+    <li *ngFor="let ship of sunkShips">
+      {{ship.name}}
+    </li>
+  </ul>
+</div>
