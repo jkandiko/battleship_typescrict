@@ -13,7 +13,7 @@ import { DamageReportEventArgs } from '../damage-report-event-args';
 import { GameEndedEventArgs } from '../game-ended-event-args';
 import { LoadGameEventArgs } from '../load-game-event-args';
 import { AttackGridComponent } from '../attack-grid/attack-grid.component';
-import { PlayerNames } from '../player-names';
+import { PlayerNames } from '../string-constants';
 
 @Component({
   selector: 'app-hud',

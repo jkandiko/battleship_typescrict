@@ -1,7 +1,7 @@
 import { gridRow } from "./grid-row";
 import { gridCell } from "./grid-cell";
 import { gamePiece } from "./game-piece";
-import { HitStatus } from "./HitStatus";
+import { HitStatus } from "./enums";
 
 export abstract class gameGrid {
   rowCount: number;

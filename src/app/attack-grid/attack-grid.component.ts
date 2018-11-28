@@ -7,7 +7,7 @@ import { FireEventArgs } from '../fire-event-args';
 import { gridCell } from '../grid-cell';
 import { DamageReportEventArgs } from '../damage-report-event-args';
 import { gamePiece } from '../game-piece';
-import { HitStatus } from '../HitStatus';
+import { HitStatus } from '../enums';
 import { LoadGameEventArgs } from '../load-game-event-args';
 @Component({
   selector: 'app-attack-grid',

@@ -1,5 +1,5 @@
 import { gamePiece } from "./game-piece";
-import { HitStatus } from "./HitStatus";
+import { HitStatus } from './enums';
 
 export class gridCell {
   text: string;

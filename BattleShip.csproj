@@ -9,11 +9,11 @@
 
   <ItemGroup>
     <None Remove="src\app\cell-drop-error-event-args.ts" />
+    <None Remove="src\app\enums.ts" />
     <None Remove="src\app\game-ended-event-args.ts" />
     <None Remove="src\app\grid-cell.ts" />
     <None Remove="src\app\grid-row.ts" />
-    <None Remove="src\app\HitStatus.ts" />
-    <None Remove="src\app\player-names.ts" />
+    <None Remove="src\app\string-constants.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,11 +27,11 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="src\app\cell-drop-error-event-args.ts" />
+    <TypeScriptCompile Include="src\app\enums.ts" />
     <TypeScriptCompile Include="src\app\game-ended-event-args.ts" />
     <TypeScriptCompile Include="src\app\grid-cell.ts" />
     <TypeScriptCompile Include="src\app\grid-row.ts" />
-    <TypeScriptCompile Include="src\app\HitStatus.ts" />
-    <TypeScriptCompile Include="src\app\player-names.ts" />
+    <TypeScriptCompile Include="src\app\string-constants.ts" />
   </ItemGroup>
 
 </Project>

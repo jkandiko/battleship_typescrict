@@ -8,8 +8,8 @@ import { TurnEndedEventArgs } from '../turn-ended-event-args';
 import { GameEndedEventArgs } from '../game-ended-event-args';
 import { LoadGameEventArgs } from '../load-game-event-args';
 import { HudComponent } from '../hud/hud.component';
-import { HitStatus } from '../HitStatus';
-import { PlayerNames } from '../player-names';
+import { HitStatus } from '../enums';
+import { PlayerNames } from '../string-constants';
 
 @Component({
   selector: 'app-game-board',
