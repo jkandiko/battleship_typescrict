@@ -46,6 +46,7 @@ export class ShipGridComponent extends gameGrid implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // prevent memory leak when component destroyed
+    this.loadHudSubscription.unsubscribe();
     this.playerReadySubscription.unsubscribe();
     this.defendSubscription.unsubscribe();
     this.pieceSunkSubscription.unsubscribe();

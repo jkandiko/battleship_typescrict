@@ -30,13 +30,13 @@ export class PieceBinComponent extends GamePieceBin implements OnInit, OnDestroy
     this.playerReadySubscription = this.hudServiceBus.piecePlaceHandlers$.subscribe(eventArgs => { this.onPiecePlaced(eventArgs); });
     this.pieceNotPlacedSubscription = this.hudServiceBus.pieceNotPlacedHandlers$.subscribe(eventArgs => { this.onGamePieceNotPlace(eventArgs); });
     this.selectedOrientation = "Horizontal";
-
   }
 
   ngOnInit() {  }
 
   ngOnDestroy() {
     // prevent memory leak when component destroyed
+    this.loadHudSubscription.unsubscribe();
     this.playerReadySubscription.unsubscribe();
     this.pieceNotPlacedSubscription.unsubscribe();
   }
@@ -101,5 +101,4 @@ export class PieceBinComponent extends GamePieceBin implements OnInit, OnDestroy
     evt.preventDefault();
     evt.stopPropagation();
   }
-
 }

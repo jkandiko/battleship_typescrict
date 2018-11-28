@@ -13,6 +13,7 @@ import { DamageReportEventArgs } from '../damage-report-event-args';
 import { GameEndedEventArgs } from '../game-ended-event-args';
 import { LoadGameEventArgs } from '../load-game-event-args';
 import { AttackGridComponent } from '../attack-grid/attack-grid.component';
+import { PlayerNames } from '../player-names';
 
 @Component({
   selector: 'app-hud',
@@ -47,11 +48,14 @@ export class HudComponent implements OnInit, OnDestroy{
   constructor(private hudServiceBus: HudServiceBus, private gameServiceBus: GameServiceBus) {
     this.pieceBinHidden = false;
     this.placeAllVisible = true;
+
+    // Events on the hud service bus
     this.playerReadySubscription = this.hudServiceBus.hudReadyHandlers$.subscribe(eventArgs => { this.onPlayerReady(eventArgs); });
     this.fireSubscription = this.hudServiceBus.attackHandlers$.subscribe(eventArgs => { this.onAttack(eventArgs); });
     this.damageSubscription = this.hudServiceBus.damageHandlers$.subscribe(eventArgs => { this.onDamageReported(eventArgs); });
     this.handleAllSunkSubscription = this.hudServiceBus.allPiecesSunkHandlers$.subscribe(eventArgs => { this.onAllSunk(eventArgs); });
 
+    // Events on the game service bux
     this.loadGameSubscription = this.gameServiceBus.loadGameHandlers$.subscribe(eventArgs => { this.onGameLoaded(eventArgs); });
     this.gameStartSubscription = this.gameServiceBus.gameStartedHandlers$.subscribe(eventArgs => { this.onGameStarted(eventArgs); });
     this.handlePlayerMoveSubscription = this.gameServiceBus.playerMoveHandlers$.subscribe(eventArgs => { this.onHandlePlayerMove(eventArgs); });
@@ -64,7 +68,6 @@ export class HudComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {
     // prevent memory leak when component destroyed
-    
     this.playerReadySubscription.unsubscribe();
     this.gameStartSubscription.unsubscribe();
     this.fireSubscription.unsubscribe();
@@ -181,10 +184,10 @@ export class HudComponent implements OnInit, OnDestroy{
       let gameEndedArgs = new GameEndedEventArgs();
       
       gameEndedArgs.loserId = this.hudId;
-      if (this.hudId == "Player1") {
-        gameEndedArgs.winnerId = "Player2";
+      if (this.hudId == PlayerNames.PLAYER_1) {
+        gameEndedArgs.winnerId = PlayerNames.PLAYER_2;
       } else {
-        gameEndedArgs.winnerId = "Player1";
+        gameEndedArgs.winnerId = PlayerNames.PLAYER_1;
       }
       this.inProcess = false;
       this.gameServiceBus.onGameEnded(gameEndedArgs);

@@ -9,6 +9,7 @@ import { GameEndedEventArgs } from '../game-ended-event-args';
 import { LoadGameEventArgs } from '../load-game-event-args';
 import { HudComponent } from '../hud/hud.component';
 import { HitStatus } from '../HitStatus';
+import { PlayerNames } from '../player-names';
 
 @Component({
   selector: 'app-game-board',
@@ -61,10 +62,10 @@ export class GameBoardComponent implements OnInit, OnDestroy{
 
   /// when a player's hud notifies us that they have locked in their board.
   onPlayerReady(eventArgs: PlayerReadyEventArgs) {
-    if (eventArgs.playerId == "Player1") {
+    if (eventArgs.playerId == PlayerNames.PLAYER_1) {
       this.player1Ready = true;
     }
-    if (eventArgs.playerId == "Player2") {
+    if (eventArgs.playerId == PlayerNames.PLAYER_2) {
       this.player2Ready = true;
     }
 
@@ -73,9 +74,9 @@ export class GameBoardComponent implements OnInit, OnDestroy{
 
       let startArgs = new GameStartedEventArgs();
       if (this.getRandomInt(1,100) % 2 == 0) {
-        startArgs.currentPlayerId = "Player1";
+        startArgs.currentPlayerId = PlayerNames.PLAYER_1;
       } else {
-        startArgs.currentPlayerId = "Player2";
+        startArgs.currentPlayerId = PlayerNames.PLAYER_2;
       }
       this.currentPlayerTurn = startArgs.currentPlayerId;
       this.gameServiceBus.onGameStarted(startArgs);
@@ -138,15 +139,15 @@ export class GameBoardComponent implements OnInit, OnDestroy{
       randomCell = this.getRandomInt(1, 10);
       
       switch (currentPlayerId) {
-        case 'Player1':
-          if (this.hud1.localAttackGrid.rows[randomRow].cells[randomCell].hitStatus == 0) {
+        case PlayerNames.PLAYER_1:
+          if (this.hud1.localAttackGrid.rows[randomRow].cells[randomCell].hitStatus == HitStatus.Clear) {
             fireEventArgs.targetCell = this.hud1.localAttackGrid.rows[randomRow].cells[randomCell];
           } else {
             console.log('occupied player 1 cell....skipping.');
           }
           break;
-        case 'Player2':
-          if (this.hud2.localAttackGrid.rows[randomRow].cells[randomCell].hitStatus == 0) {
+        case PlayerNames.PLAYER_2:
+          if (this.hud2.localAttackGrid.rows[randomRow].cells[randomCell].hitStatus == HitStatus.Clear) {
            fireEventArgs.targetCell = this.hud2.localAttackGrid.rows[randomRow].cells[randomCell];
           } else {
             console.log('occupied player 2 cell....skipping.');
@@ -155,7 +156,7 @@ export class GameBoardComponent implements OnInit, OnDestroy{
       }
     }
     console.log(currentPlayerId + ' is attacking row ' + randomRow + ', cell ' + randomCell);
-    this.gameServiceBus.onPlayerMove(fireEventArgs);
 
+    this.gameServiceBus.onPlayerMove(fireEventArgs);
   }
 }

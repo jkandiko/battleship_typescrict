@@ -13,6 +13,7 @@
     <None Remove="src\app\grid-cell.ts" />
     <None Remove="src\app\grid-row.ts" />
     <None Remove="src\app\HitStatus.ts" />
+    <None Remove="src\app\player-names.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
     <TypeScriptCompile Include="src\app\grid-cell.ts" />
     <TypeScriptCompile Include="src\app\grid-row.ts" />
     <TypeScriptCompile Include="src\app\HitStatus.ts" />
+    <TypeScriptCompile Include="src\app\player-names.ts" />
   </ItemGroup>
 
 </Project>
