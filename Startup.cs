@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace WebApplication2 {
+namespace BattleShip {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;

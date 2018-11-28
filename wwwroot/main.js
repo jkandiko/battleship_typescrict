@@ -119,7 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'WebApplication2';
+        this.title = 'BattleShip';
     }
     return AppComponent;
 }());
@@ -2005,7 +2005,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jkandiko\source\repos\WebApplication2\WebApplication2\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\jkandiko\source\repos\BattleShip\BattleShip\src\main.ts */"./src/main.ts");
 
 
 /***/ })

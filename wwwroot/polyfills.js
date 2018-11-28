@@ -3160,7 +3160,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jkandiko\source\repos\WebApplication2\WebApplication2\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\jkandiko\source\repos\BattleShip\BattleShip\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
