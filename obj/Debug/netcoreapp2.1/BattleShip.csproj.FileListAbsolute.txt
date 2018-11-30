@@ -1,0 +1,14 @@
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\bin\Debug\netcoreapp2.1\BattleShip.deps.json
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\bin\Debug\netcoreapp2.1\BattleShip.runtimeconfig.json
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\bin\Debug\netcoreapp2.1\BattleShip.runtimeconfig.dev.json
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\bin\Debug\netcoreapp2.1\BattleShip.dll
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\bin\Debug\netcoreapp2.1\BattleShip.pdb
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.csprojAssemblyReference.cache
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.csproj.CoreCompileInputs.cache
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.RazorAssemblyInfo.cache
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.RazorAssemblyInfo.cs
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.AssemblyInfoInputs.cache
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.AssemblyInfo.cs
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.RazorTargetAssemblyInfo.cache
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.dll
+C:\Users\jkandiko\source\repos\BattleShip\BattleShip\obj\Debug\netcoreapp2.1\BattleShip.pdb

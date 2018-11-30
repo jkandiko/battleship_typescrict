@@ -7,7 +7,8 @@ import { ShipGridComponent } from './ship-grid/ship-grid.component';
 import { AttackGridComponent } from './attack-grid/attack-grid.component';
 import { PieceBinComponent } from './piece-bin/piece-bin.component';
 import { GameBoardComponent } from './game-board/game-board.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ServerSideGameService } from './server-side-game-service';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import { GameBoardComponent } from './game-board/game-board.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [ServerSideGameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
